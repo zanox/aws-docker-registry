@@ -25,9 +25,9 @@ case "$1" in
 
   stop)
     fail_unless_root
-    log_begin_msg "Stopping docker-regitry: $BASE"
+    echo "Stopping docker-regitry: $BASE"
     start-stop-daemon --stop --pidfile "$DOCKER_REGISTRY_PIDFILE"
-    log_end_msg $?
+    echo $?
     ;;
 
     *)
