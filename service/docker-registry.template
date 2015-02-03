@@ -19,7 +19,7 @@ fail_unless_root() {
 case "$1" in
   start)
     fail_unless_root
-    docker run -p 5000:5000 -v /etc/docker:/registry-conf -e DOCKER_REGISTRY_CONFIG=/registry-conf/config.yml -e SETTINGS_FLAVOR=prod -e AWS_BUCKET=@BUCKET@ -e AWS_REGION=@REGION@ registry &
+    docker run -p 5000:5000 -v /etc/docker:/registry-conf -e DOCKER_REGISTRY_CONFIG=/registry-conf/config.yml -e SETTINGS_FLAVOR=prod -e AWS_BUCKET=@BUCKET@ -e AWS_REGION=@REGION@ -e SEARCH_BACKEND=sqlalchemy registry &
     echo $! > $DOCKER_REGISTRY_PIDFILE
     ;;
 
