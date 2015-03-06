@@ -1,9 +1,14 @@
-#!/bin/bash
-
-#
-# chkconfig: 2345 95 05
-# description: docker-registry
-#
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides: docker-registry
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: docker-registry
+# Description: This file starts and stops docker-registry
+# 
+### END INIT INFO
 
 export SETTINGS_FLAVOR=prod
 BASE=$(basename $0)
